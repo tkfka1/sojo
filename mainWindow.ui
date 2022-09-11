@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>684</width>
-    <height>382</height>
+    <width>673</width>
+    <height>383</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -83,7 +83,7 @@
      <rect>
       <x>220</x>
       <y>0</y>
-      <width>461</width>
+      <width>451</width>
       <height>351</height>
      </rect>
     </property>
@@ -93,8 +93,11 @@
       <pointsize>8</pointsize>
      </font>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -105,7 +108,7 @@
        <rect>
         <x>10</x>
         <y>250</y>
-        <width>431</width>
+        <width>311</width>
         <height>61</height>
        </rect>
       </property>
@@ -133,9 +136,9 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>60</y>
         <width>431</width>
-        <height>241</height>
+        <height>191</height>
        </rect>
       </property>
       <property name="font">
@@ -151,7 +154,7 @@
        <property name="geometry">
         <rect>
          <x>13</x>
-         <y>200</y>
+         <y>60</y>
          <width>150</width>
          <height>23</height>
         </rect>
@@ -169,7 +172,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>30</y>
+         <y>110</y>
          <width>70</width>
          <height>16</height>
         </rect>
@@ -187,7 +190,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>50</y>
+         <y>130</y>
          <width>70</width>
          <height>16</height>
         </rect>
@@ -205,7 +208,7 @@
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>50</y>
+         <y>130</y>
          <width>61</width>
          <height>16</height>
         </rect>
@@ -226,7 +229,7 @@
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>30</y>
+         <y>110</y>
          <width>61</width>
          <height>16</height>
         </rect>
@@ -247,7 +250,7 @@
        <property name="geometry">
         <rect>
          <x>13</x>
-         <y>180</y>
+         <y>40</y>
          <width>110</width>
          <height>16</height>
         </rect>
@@ -258,14 +261,14 @@
         </font>
        </property>
        <property name="text">
-        <string>딥러닝 상태</string>
+        <string>일퀘 상태</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_minimap">
        <property name="geometry">
         <rect>
          <x>290</x>
-         <y>70</y>
+         <y>150</y>
          <width>110</width>
          <height>16</height>
         </rect>
@@ -286,7 +289,7 @@
        <property name="geometry">
         <rect>
          <x>290</x>
-         <y>30</y>
+         <y>110</y>
          <width>110</width>
          <height>16</height>
         </rect>
@@ -307,7 +310,7 @@
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>70</y>
+         <y>150</y>
          <width>110</width>
          <height>16</height>
         </rect>
@@ -321,47 +324,11 @@
         <string>미니맵 위치</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_13">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>30</y>
-         <width>110</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>메이플 위치</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_14">
-       <property name="geometry">
-        <rect>
-         <x>179</x>
-         <y>49</y>
-         <width>110</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>프로세스</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_process">
        <property name="geometry">
         <rect>
          <x>292</x>
-         <y>46</y>
+         <y>126</y>
          <width>111</width>
          <height>21</height>
         </rect>
@@ -382,7 +349,7 @@
        <property name="geometry">
         <rect>
          <x>270</x>
-         <y>190</y>
+         <y>50</y>
          <width>110</width>
          <height>30</height>
         </rect>
@@ -405,7 +372,7 @@
        <property name="geometry">
         <rect>
          <x>290</x>
-         <y>90</y>
+         <y>170</y>
          <width>110</width>
          <height>16</height>
         </rect>
@@ -422,35 +389,33 @@
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_15">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>90</y>
-         <width>110</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>미니맵 크기</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_imgmapinfo">
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>311</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>연결</string>
+      </property>
+      <widget class="QComboBox" name="comboBox_2">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>120</y>
+         <y>30</y>
          <width>291</width>
-         <height>51</height>
+         <height>22</height>
         </rect>
-       </property>
-       <property name="pixmap">
-        <pixmap>../Documents/GitHub/map1.0/img/mapinfo.PNG</pixmap>
        </property>
       </widget>
      </widget>
@@ -514,7 +479,7 @@
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
-      <string>캡쳐설정</string>
+      <string>설정</string>
      </attribute>
      <widget class="QDoubleSpinBox" name="doubleSpinBoxLil">
       <property name="geometry">
@@ -557,64 +522,7 @@
        <string>캡처 주기</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBoxLoc">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>164</y>
-        <width>137</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>위치체크</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBoxRune">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>192</y>
-        <width>137</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>룬체크</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBoxRunedeep">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>137</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>룬딥러닝</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBoxMaple">
+     <widget class="QCheckBox" name="checkBoxMoi">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -630,10 +538,10 @@
        </font>
       </property>
       <property name="text">
-       <string>메이플체크</string>
+       <string>모의작전</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBoxMinimap">
+     <widget class="QCheckBox" name="checkBoxHon">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -649,158 +557,14 @@
        </font>
       </property>
       <property name="text">
-       <string>미니맵체크</string>
+       <string>혼합작전</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBoxLd">
+     <widget class="QCheckBox" name="checkBoxHon_2">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>246</y>
-        <width>137</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>거탐체크</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>스크립트</string>
-     </attribute>
-     <widget class="QCheckBox" name="checkBoxArdu">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>151</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>아두이노 사용</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_5">
-     <attribute name="title">
-      <string>디코설정</string>
-     </attribute>
-     <widget class="QLineEdit" name="discordTokken">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
-        <y>180</y>
-        <width>290</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
-        <y>260</y>
-        <width>90</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>디스코드 유저</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="discordChannel">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
-        <y>230</y>
-        <width>290</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
-        <y>210</y>
-        <width>90</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>디스코드 채널</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="discordUser">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
-        <y>280</y>
-        <width>290</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
         <y>160</y>
-        <width>90</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>디스코드 토큰</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBoxBot">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
         <width>137</width>
         <height>28</height>
        </rect>
@@ -812,7 +576,77 @@
        </font>
       </property>
       <property name="text">
-       <string>디코봇 사용</string>
+       <string>숙소전지</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBoxHon_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>137</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>숙소칭찬</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBoxHon_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>137</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>일일퀘스트</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBoxHon_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>137</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>정보임무</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="settingBtn">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>260</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>설정값저장</string>
       </property>
      </widget>
     </widget>
@@ -833,20 +667,7 @@
      </font>
     </property>
     <property name="text">
-     <string>불러오기</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="settingBtn">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>350</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>설정값저장</string>
+     <string>연결</string>
     </property>
    </widget>
   </widget>
