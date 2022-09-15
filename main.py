@@ -141,7 +141,7 @@ class Capture:
         print(loc_pos[1][0], loc_pos[0][0])
         print(con_pos)
         if con_pos > 0.95:
-            return loc_pos[1][0], loc_pos[0][0], con_pos
+            return loc_pos[1][0], loc_pos[0][0], 1
         else:
             return 0,0,0
 
@@ -300,14 +300,14 @@ class CaptureWorker(QThread):
             bbox = [780, 576, 923, 628]
             res = Capture.compare(self, self.tempimg, bbox, Capture.supervisor0)
             if res[2] == 1:
-                print("맞았다")
+                print("군수맞았다")
                 x,y,dx,dy = 847,596,20,14
                 clickRand(x,y,dx,dy)
                 print("눌렀다")
-                time.sleep(30)
+                time.sleep(1)
             else:
                 print("군수아닌가벼")
-                time.sleep(30)
+                time.sleep(3)
             self.tempimg = captureMain()
             bbox = [497,438,622,487]
             res = Capture.compare(self, self.tempimg, bbox, Capture.decision)
