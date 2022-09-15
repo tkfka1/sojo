@@ -1,9 +1,24 @@
-import pytesseract
-from PIL import Image
+global device
+image_byte_array = device.screencap()
+# convert the byte array to a numpy array (RGB)
+image = cv2.imdecode(np.frombuffer(bytes(image_byte_array), np.uint8), cv2.IMREAD_COLOR)
+dst = image.copy()
+# print(dst)
+jin = dst[15:40, 393:493].copy()
+jtan = dst[15:40, 533:633].copy()
+jsik = dst[15:40, 676:776].copy()
+jbu = dst[15:40, 820:920].copy()
+cv2.imwrite('img/tempin.png', jin)
+cv2.imwrite('img/temptan.png', jtan)
+cv2.imwrite('img/tempsik.png', jsik)
+cv2.imwrite('img/tempbu.png', jbu)
+jin = cv2.imread('img/tempin.png', cv2.IMREAD_GRAYSCALE)
+jtan = cv2.imread('img/temptan.png', cv2.IMREAD_COLOR)
+jsik = cv2.imread('img/tempsik.png', cv2.IMREAD_COLOR)
+jbu = cv2.imread('img/tempbu.png', cv2.IMREAD_COLOR)
 
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
-
-img_path = "temptan.png" # filename
-image_pil = Image.open(img_path)
-img_pytesseract_en = pytesseract.image_to_string(image_pil)
-print(img_pytesseract_en)
+text = pytesseract.image_to_string(jin, lang='kor+eng')
+print(text)
+cv2.imshow('my image', jin)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
