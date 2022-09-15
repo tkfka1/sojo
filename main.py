@@ -1,7 +1,8 @@
 from http import client
 import time
 import socket
-# pure-python-adb loading 
+# pure-python-adb loading
+# pip install -U pure-python-adb
 from ppadb.client import Client as AdbClient
 # pip install psutil
 import psutil
