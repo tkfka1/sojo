@@ -130,11 +130,11 @@ class Capture:
         if not bbox[3] == 0:
             img = img[bbox[1]:bbox[3], bbox[0]:bbox[2]]
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        cv2.imwrite('img/temp.png', img)
         res_pos = cv2.matchTemplate((cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)), what,
                                      cv2.TM_CCOEFF_NORMED)
         con_pos = res_pos.max()
         loc_pos = np.where(res_pos == con_pos)
-        # cv2.imwrite('img/temp.png', img)
         print(loc_pos[1][0], loc_pos[0][0])
         print(con_pos)
         if con_pos > 0.95:
@@ -243,13 +243,12 @@ class MyWindow(QMainWindow, form_class):
         Capture.compare(self, res, bbox,Capture.decision)
         print("얏다")
 
-
-
     def onTest2Clicked(self):
-        global device
-        print("test1")
-        cmd = "pm dump kr.txwy.and.snqx"
-        print(device.shell(cmd))
+        tempimg = captureMain()
+        res = tempimg[:]
+        bbox = [780, 576, 923, 628]
+        res = Capture.compare(self, res, bbox, Capture.supervisor0)
+        print("얏다")
 
     def onTest3Clicked(self):
         global device
@@ -295,8 +294,6 @@ class CaptureWorker(QThread):
         def myloce():
             self.tempimg = captureMain()
             bbox = [780, 576, 923, 628]
-            print("sex")
-            
             res = Capture.compare(self, self.tempimg, bbox, Capture.supervisor0)
             if res[2] == 1:
                 print("군수맞았다")
