@@ -305,7 +305,7 @@ class CaptureWorker(QThread):
                 print("군수아닌가벼")
                 time.sleep(3)
             self.tempimg = captureMain()
-            bbox = [497,438,622,487]
+            bbox = [497,438,542,480]
             res = Capture.compare(self, self.tempimg, bbox, Capture.decision)
             if res[2] == 1:
                 print("결정맞았다")
