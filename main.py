@@ -8,8 +8,6 @@ import schedule as schedule
 from ppadb.client import Client as AdbClient
 # pip install psutil
 import psutil
-# pip install pytesseract
-import pytesseract
 import distutils
 import os
 from PyQt5.QtCore import *
@@ -37,7 +35,6 @@ import random
 # import configparser
 
 form_class = uic.loadUiType("mainWindow.ui")[0]
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
 
 applay = None
 device = None
@@ -126,8 +123,8 @@ def startSojo():
 
 class Capture:
 
-    supervisor0 = cv2.imread('./img/supervisor0.png', cv2.IMREAD_COLOR)
-    decision = cv2.imread('./img/decision.png', cv2.IMREAD_COLOR)
+    supervisor0 = cv2.imread('img/supervisor0.png', cv2.IMREAD_COLOR)
+    decision = cv2.imread('img/decision.png', cv2.IMREAD_COLOR)
 
     def compare(self, img, bbox, what):
         if not bbox[3] == 0:
@@ -298,6 +295,8 @@ class CaptureWorker(QThread):
         def myloce():
             self.tempimg = captureMain()
             bbox = [780, 576, 923, 628]
+            print("sex")
+            
             res = Capture.compare(self, self.tempimg, bbox, Capture.supervisor0)
             if res[2] == 1:
                 print("군수맞았다")
