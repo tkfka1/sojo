@@ -25,7 +25,6 @@ from PIL import ImageGrab, Image
 # import struct
 import sys
 import random
-
 # import asyncio
 # import discord
 # from discord.ext import commands
