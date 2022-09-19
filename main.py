@@ -294,6 +294,7 @@ class CaptureWorker(QThread):
             self.tempimg = captureMain()
             bbox = [780, 576, 923, 628]
             res = Capture.compare(self, self.tempimg, bbox, Capture.supervisor0)
+            print(time.time())
             if res[2] == 1:
                 print("군수맞았다")
                 x,y,dx,dy = 847,596,20,14
