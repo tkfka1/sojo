@@ -47,8 +47,8 @@ def connect(n):
     if len(devices) == 0:
         print('No devices')
         quit()
-    print(devices)
-    device = devices[n]
+        
+    device = applay.device(n)
 
 def serchDivice():
     os.system('cd {}'.format(os.getcwd()))
@@ -223,7 +223,8 @@ class MyWindow(QMainWindow, form_class):
             # return
         self.isRun = False
     def onAdbClicked(self):
-        ads = self.comboBox_2.currentIndex()
+        ads = self.comboBox_2.currentText()
+        print(ads)
         connect(ads)
         devi = self.comboBox_2.currentText()
         self.textInputTB1(f'Connected to {devi}')
