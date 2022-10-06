@@ -33,10 +33,16 @@ import random
 # import tensorflow as tf
 # import configparser
 
+
+# ui파일 불러오기
 form_class = uic.loadUiType("mainWindow.ui")[0]
 
+# applay = adb 연결 서버
 applay = None
+# device = adb 연결 된것
 device = None
+
+# 캡쳐 주기 초기화
 caplil = 0.1
 
 def connect(n):
@@ -98,7 +104,6 @@ def clickRand(x, y, dx, dy):
     cmd = "input touchscreen tap " + str(xx) + " " + str(yy)
     device.shell(cmd)
 
-
 def clickSwipe(cor):
     global device
     newy = cor[1]
@@ -112,13 +117,11 @@ def packageSerch():
     cmd = "pm list packages -f"
     print(device.shell(cmd))
 
-
 def startSojo():
     global device
     print("test1")
     cmd = "am start -n kr.txwy.and.snqx/com.txwy.passport.model.MainActivity"
     print(device.shell(cmd))
-
 
 class Capture:
 
@@ -141,16 +144,6 @@ class Capture:
         else:
             return 0,0,0
 
-
-
-
-
-
-
-
-for proc in psutil.process_iter():
-    processName=proc.name()
-    processID=proc.pid
 
 class MyWindow(QMainWindow, form_class):
     def __init__(self):
@@ -222,13 +215,14 @@ class MyWindow(QMainWindow, form_class):
             self.textInputTB1("캡쳐 쓰레드가 실행중이지 않습니다.")
             # return
         self.isRun = False
+        
     def onAdbClicked(self):
         ads = self.comboBox_2.currentText()
         print(ads)
         connect(ads)
-        devi = self.comboBox_2.currentText()
-        self.textInputTB1(f'Connected to {devi}')
+        self.textInputTB1(f'Connected to {ads}')
         self.connectAnd = False
+
 
     def onCapClicked(self):
         capture()
@@ -255,9 +249,12 @@ class MyWindow(QMainWindow, form_class):
         print("test1")
         cmd = "am start -n kr.txwy.and.snqx/com.txwy.passport.model.MainActivity"
         print(device.shell(cmd))
+
+
     def lil_changed(self):
         global caplil
         caplil = round(self.doubleSpinBoxLil.value(), 2)
+
     def closeEvent(self, event):
         quit_msg = "종료하시겠습니까??"
         reply = QMessageBox.question(self, '매크로 종료', quit_msg, QMessageBox.Yes, QMessageBox.No)
@@ -278,7 +275,6 @@ class MyWindow(QMainWindow, form_class):
         self.captureworker.start()
         self.captureworker.textInputTB1.connect(self.textInputTB1)
 
-
 # 기본 워커
 class CaptureWorker(QThread):
     textInputTB1 = pyqtSignal(str)
@@ -292,36 +288,38 @@ class CaptureWorker(QThread):
 
     def run(self):
         def myloce():
-            self.tempimg = captureMain()
-            bbox = [780, 576, 923, 628]
-            res = Capture.compare(self, self.tempimg, bbox, Capture.supervisor0)
-            print(time.time())
-            if res[2] == 1:
-                print("군수맞았다")
-                x,y,dx,dy = 847,596,20,14
-                clickRand(x,y,dx,dy)
-                print("눌렀다")
-                time.sleep(1)
-            else:
-                print("군수아닌가벼")
-                time.sleep(3)
-            self.tempimg = captureMain()
-            bbox = [497,438,542,480]
-            res = Capture.compare(self, self.tempimg, bbox, Capture.decision)
-            if res[2] == 1:
-                print("결정맞았다")
-                x,y,dx,dy = 557,461,20,20
-                clickRand(x,y,dx,dy)
-                print("눌렀다")
-                time.sleep(30)
-            else:
-                print("결정아닌가벼")
-                time.sleep(30)
+            #씨발
+            # self.tempimg = captureMain()
+            # bbox = [780, 576, 923, 628]
+            # res = Capture.compare(self, self.tempimg, bbox, Capture.supervisor0)
+            # print(time.time())
+            # if res[2] == 1:
+            #     print("군수맞았다")
+            #     x,y,dx,dy = 847,596,20,14
+            #     clickRand(x,y,dx,dy)
+            #     print("눌렀다")
+            #     time.sleep(1)
+            # else:
+            #     print("군수아닌가벼")
+            #     time.sleep(3)
+            # self.tempimg = captureMain()
+            # bbox = [497,438,542,480]
+            # res = Capture.compare(self, self.tempimg, bbox, Capture.decision)
+            # if res[2] == 1:
+            #     print("결정맞았다")
+            #     x,y,dx,dy = 557,461,20,20
+            #     clickRand(x,y,dx,dy)
+            #     print("눌렀다")
+            #     time.sleep(30)
+            # else:
+            #     print("결정아닌가벼")
+            #     time.sleep(30)
+            print("웃우")
 
         job1 = schedule.every(caplil).seconds.do(myloce)
         while self.running:
             schedule.run_pending()
-            time.sleep(caplil)
+            time.sleep(1)
         else:
             schedule.cancel_job(job1)
     def resume(self):
